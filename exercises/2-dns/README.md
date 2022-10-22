@@ -11,5 +11,5 @@ This exercise is built on top of [exercise 1](../1-vnets/). So you need deploy t
 az deployment group create -g rg-contoso -n az-700-ex2 --template-file main.bicep --parameters @parameters.json
 
 # Clean up everything afterwards
-az group delete rg-contoso
+az group delete -g rg-contoso
 ```

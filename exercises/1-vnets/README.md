@@ -14,5 +14,5 @@ az group create -l eastus -n rg-contoso
 az deployment group create -g rg-contoso -n az-700-ex1 --template-file main.bicep
 
 # Clean up everything afterwards
-az group delete rg-contoso
+az group delete -g rg-contoso
 ```
