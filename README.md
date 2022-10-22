@@ -5,3 +5,4 @@ Preparation for AZ-700 Certification
 ## Exercises
 
 * [#1 - VNETs](./exercises/1-vnets/)
+* [#2 - DNS](./exercises/2-dns/)
