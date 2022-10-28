@@ -1,16 +1,19 @@
-# Exercise 3 - VNET Peering (Module 1, Unit 7)
+# Exercise 3 - VNET Peering (Module 1, Unit 8)
 
-This is manual exercise which has not been defined in the module. It just helps understanding the contents better.
+[Go to exercise](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/8-exercise-connect-two-azure-virtual-networks-global)
 
-[Go to exercise](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/7-enable-cross-virtual-network-connectivity-peering)
+Some Azure resources have been renamed according to the best practices of [Azure Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)!
 
 ## Getting started
 
-This exercise is built on top of [exercise 1](../1-vnets/). So you need deploy the resources from [exercise 1](../1-vnets/) first!
+This exercise is built on top of [exercise 2(../2-dns/). So you need deploy the resources from [exercise 2](../2-dns/) first!
 
 ```bash
 # Create all the resources with running a Bicep template
-az deployment group create -g rg-contoso -n az-700-ex3 --template-file main.bicep
+az deployment group create -g rg-contoso -n az-700-ex3 --template-file main.bicep --parameters @parameters.json
+
+# Adapting Network Securits Groups (NSGs) to enable RDP for the demo VMs
+az network vnet subnet update -g rg-contoso -n snet-manufacturingsystem --vnet-name vnet-manufacturing --network-security-group nsg-manufacturing
 
 # Clean up everything afterwards
 az group delete -g rg-contoso

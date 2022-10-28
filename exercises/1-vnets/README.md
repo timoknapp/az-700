@@ -4,6 +4,8 @@
 
 ![vnet](https://learn.microsoft.com/en-us/training/wwl-azure/introduction-to-azure-virtual-networks/media/design-implement-vnet-peering.png)
 
+Some Azure resources have been renamed according to the best practices of [Azure Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)!
+
 ## Getting started
 
 ```bash

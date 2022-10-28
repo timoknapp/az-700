@@ -1,16 +1,16 @@
 param location string = resourceGroup().location
 
 @description('Name of VM1')
-param vmName1 string = 'testvm1'
+param vmName1 string = 'vm-testvm-1'
 
 @description('Name of NIC1')
-param nicName1 string = 'testvm1-nic'
+param nicName1 string = 'nic-1-testvm-1'
 
 @description('Name of VM2')
-param vmName2 string = 'testvm2'
+param vmName2 string = 'vm-testvm-2'
 
 @description('Name of NIC2')
-param nicName2 string = 'testvm2-nic'
+param nicName2 string = 'nic-1-testvm-2'
 
 @description('Virtual machine size')
 param vmSize string = 'Standard_D2s_v3'
@@ -22,18 +22,18 @@ param adminUsername string = 'TestUser'
 @secure()
 param adminPassword string
 
-var coreVirtualNetworkName = 'CoreServicesVnet'
-var manufacturingVirtualNetworkName = 'ManufacturingVnet'
-var researchVirtualNetworkName = 'ResearchVnet'
+var coreVirtualNetworkName = 'vnet-coreservices'
+var manufacturingVirtualNetworkName = 'vnet-manufacturing'
+var researchVirtualNetworkName = 'vnet-research'
 var virtualNetworks_CoreServicesVnet_externalid = resourceId('Microsoft.Network/virtualNetworks', coreVirtualNetworkName)
 var virtualNetworks_ManufacturingVnet_externalid = resourceId('Microsoft.Network/virtualNetworks', manufacturingVirtualNetworkName)
 var virtualNetworks_ResearchVnet_externalid = resourceId('Microsoft.Network/virtualNetworks', researchVirtualNetworkName)
-var nsgName1 = 'testvm1-nsg'
-var nsgName2 = 'testvm2-nsg'
-var PIPName1 = 'testvm1-pip'
-var PIPName2 = 'testvm2-pip'
-var subnetName = 'DatabaseSubnet'
-var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', coreVirtualNetworkName, subnetName)
+var nsgName1 = 'nsg-testvm-1'
+var nsgName2 = 'nsg-testvm-2'
+var PIPName1 = 'pip-testvm-1'
+var PIPName2 = 'pip-testvm-2'
+var subnetNameCoreDatabase = 'snet-database'
+var subnetRefCoreDatabase = resourceId('Microsoft.Network/virtualNetworks/subnets', coreVirtualNetworkName, subnetNameCoreDatabase)
 
 resource privateDnsZones_contoso_com_name_resource 'Microsoft.Network/privateDnsZones@2018-09-01' = {
   name: 'contoso.com'
@@ -131,7 +131,7 @@ resource nic1 'Microsoft.Network/networkInterfaces@2018-08-01' = {
         name: 'ipconfig1'
         properties: {
           subnet: {
-            id: subnetRef
+            id: subnetRefCoreDatabase
           }
           privateIPAllocationMethod: 'Dynamic'
           publicIPAddress: {
@@ -223,7 +223,7 @@ resource nic2 'Microsoft.Network/networkInterfaces@2018-08-01' = {
         name: 'ipconfig1'
         properties: {
           subnet: {
-            id: subnetRef
+            id: subnetRefCoreDatabase
           }
           privateIPAllocationMethod: 'Dynamic'
           publicIPAddress: {
