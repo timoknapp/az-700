@@ -4,6 +4,24 @@ Preparation for AZ-700 Certification
 
 ## Exercises
 
-* [#1 - VNETs](./exercises/1-vnets/)
-* [#2 - DNS](./exercises/2-dns/)
-* [#3 - VNET Peering](./exercises/3-peering/)
+### [Module 1 - Introduction to Azure Virtual Networks](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/)
+
+* [#1 - VNETs](./exercises/module-1/1-vnets/)
+* [#2 - DNS](./exercises/module-1/2-dns/)
+* [#3 - VNET Peering](./exercises/module-1/3-peering/)
+
+### [Module 2 - Design and implement hybrid networking](https://learn.microsoft.com/en-us/training/modules/design-implement-hybrid-networking/)
+
+* [#1 - VNET Gateways](./exercises/module-2/1-vnet-gateway/)
+
+### [Module 3 - Design and implement Azure ExpressRoute](https://learn.microsoft.com/en-us/training/modules/design-implement-azure-expressroute/)
+
+### [Module 4 - Load balance non-HTTP(S) traffic in Azure](https://learn.microsoft.com/en-us/training/modules/load-balancing-non-https-traffic-azure/)
+
+### [Module 5 - Load balance HTTP(S) traffic in Azure](https://learn.microsoft.com/en-us/training/modules/load-balancing-https-traffic-azure/)
+
+### [Module 6 - Design and implement network security](https://learn.microsoft.com/en-us/training/modules/design-implement-network-security-monitoring/)
+
+### [Module 7 - Design and implement private access to Azure Services](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/)
+
+### [Module 8 - Design and implement network monitoring](https://learn.microsoft.com/en-us/training/modules/design-implement-network-monitoring/)
