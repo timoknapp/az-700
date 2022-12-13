@@ -202,7 +202,7 @@ resource virtualNetworks_ResearchVnet_name_resource 'Microsoft.Network/virtualNe
 
 resource vm1 'Microsoft.Compute/virtualMachines@2018-06-01' = {
   name: vmName1
-  location: location
+  location: location_Eus
   properties: {
     osProfile: {
       computerName: vmName1
@@ -242,7 +242,7 @@ resource vm1 'Microsoft.Compute/virtualMachines@2018-06-01' = {
 
 resource nic1 'Microsoft.Network/networkInterfaces@2018-08-01' = {
   name: nicName1
-  location: location
+  location: location_Eus
   properties: {
     ipConfigurations: [
       {
@@ -266,7 +266,7 @@ resource nic1 'Microsoft.Network/networkInterfaces@2018-08-01' = {
 
 resource nsg1 'Microsoft.Network/networkSecurityGroups@2018-08-01' = {
   name: nsgName1
-  location: location
+  location: location_Eus
   properties: {
     securityRules: [
       {
@@ -288,7 +288,7 @@ resource nsg1 'Microsoft.Network/networkSecurityGroups@2018-08-01' = {
 
 resource PIP1 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
   name: PIPName1
-  location: location
+  location: location_Eus
   sku: {
     name: 'Basic'
     tier: 'Regional'
