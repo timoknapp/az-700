@@ -13,8 +13,6 @@ param serviceProviderName string = 'Equinix'
 @description('This is the name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call.')
 param peeringLocation string = 'Seattle'
 
-@description('This is the name of the ExpressRoute Port. It must exactly match one of the Direct Ports from List ExpressRoute Ports API call')
-param expressRoutePort object
 param bandwidthInGbps int = 0
 
 @description('This is the bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call.')
@@ -69,9 +67,6 @@ resource portType_circuitName_nodeploy2 'Microsoft.Network/expressRouteCircuits@
     family: sku_family
   }
   properties: {
-    expressRoutePort: {
-      id: expressRoutePort.id
-    }
     bandwidthInGbps: bandwidthInGbps
   }
 }
