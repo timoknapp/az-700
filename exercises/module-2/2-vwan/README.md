@@ -1,4 +1,4 @@
-# Module 2, Exercise 2 - VPN Gatewaay (Module 2, Unit 7)
+# Module 2, Exercise 2 - Virtual WAN (Module 2, Unit 7)
 
 [Go to exercise](https://learn.microsoft.com/en-us/training/modules/design-implement-hybrid-networking/7-exercise-create-virtual-wan-by-using-azure-portal)
 

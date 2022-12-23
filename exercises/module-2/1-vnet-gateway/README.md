@@ -1,4 +1,4 @@
-# Module 2, Exercise 1 - VPN Gatewaay (Module 2, Unit 3)
+# Module 2, Exercise 1 - VPN Gateway (Module 2, Unit 3)
 
 [Go to exercise](https://learn.microsoft.com/en-us/training/modules/design-implement-hybrid-networking/3-exercise-create-configure-local-network-gateway)
 
