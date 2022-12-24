@@ -13,8 +13,12 @@ Preparation for AZ-700 Certification
 ### [Module 2 - Design and implement hybrid networking](https://learn.microsoft.com/en-us/training/modules/design-implement-hybrid-networking/)
 
 * [#1 - VNET Gateways](./exercises/module-2/1-vnet-gateway/)
+* [#2 - VWAN](./exercises/module-2/2-vwan/)
 
 ### [Module 3 - Design and implement Azure ExpressRoute](https://learn.microsoft.com/en-us/training/modules/design-implement-azure-expressroute/)
+
+* [#1 - ExpressRoute Gateway](./exercises/module-3/1-expressroute-gateway/)
+* [#2 - ExpressRoute Circuit](./exercises/module-3/2-expressroute-circuit/)
 
 ### [Module 4 - Load balance non-HTTP(S) traffic in Azure](https://learn.microsoft.com/en-us/training/modules/load-balancing-non-https-traffic-azure/)
 
