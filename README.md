@@ -22,6 +22,9 @@ Preparation for AZ-700 Certification
 
 ### [Module 4 - Load balance non-HTTP(S) traffic in Azure](https://learn.microsoft.com/en-us/training/modules/load-balancing-non-https-traffic-azure/)
 
+* [#1 - Load balancer](./exercises/module-4/1-load-balancer/)
+* [#2 - Traffic Manager](./exercises/module-4/2-traffic-manager/)
+
 ### [Module 5 - Load balance HTTP(S) traffic in Azure](https://learn.microsoft.com/en-us/training/modules/load-balancing-https-traffic-azure/)
 
 ### [Module 6 - Design and implement network security](https://learn.microsoft.com/en-us/training/modules/design-implement-network-security-monitoring/)
