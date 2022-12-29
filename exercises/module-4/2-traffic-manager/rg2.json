@@ -1,0 +1,234 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "serverfarms_ContosoAppServicePlanWestEurope_name": {
+      "type": "String"
+    },
+    "sites_ContosoWebAppWestEuropeDE_name": {
+      "type": "String"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2022-03-01",
+      "kind": "app",
+      "location": "West Europe",
+      "name": "[parameters('serverfarms_ContosoAppServicePlanWestEurope_name')]",
+      "properties": {
+        "elasticScaleEnabled": false,
+        "hyperV": false,
+        "isSpot": false,
+        "isXenon": false,
+        "maximumElasticWorkerCount": 1,
+        "perSiteScaling": false,
+        "reserved": false,
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0,
+        "zoneRedundant": false
+      },
+      "sku": {
+        "capacity": 1,
+        "family": "S",
+        "name": "S1",
+        "size": "S1",
+        "tier": "Standard"
+      },
+      "type": "Microsoft.Web/serverfarms"
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ContosoAppServicePlanWestEurope_name'))]"
+      ],
+      "kind": "app",
+      "location": "West Europe",
+      "name": "[parameters('sites_ContosoWebAppWestEuropeDE_name')]",
+      "properties": {
+        "clientAffinityEnabled": true,
+        "clientCertEnabled": false,
+        "clientCertMode": "Required",
+        "containerSize": 0,
+        "customDomainVerificationId": "B12F785B29ADF4BB8566BF211C4D6EE45491ED65AEC774CD4EFBEFF0D9C3927A",
+        "dailyMemoryTimeQuota": 0,
+        "enabled": true,
+        "hostNameSslStates": [
+          {
+            "hostType": "Standard",
+            "name": "contoso-tmprofilede.trafficmanager.net",
+            "sslState": "Disabled"
+          },
+          {
+            "hostType": "Standard",
+            "name": "contosowebappwesteuropede.azurewebsites.net",
+            "sslState": "Disabled"
+          },
+          {
+            "hostType": "Repository",
+            "name": "contosowebappwesteuropede.scm.azurewebsites.net",
+            "sslState": "Disabled"
+          }
+        ],
+        "hostNamesDisabled": false,
+        "httpsOnly": true,
+        "hyperV": false,
+        "isXenon": false,
+        "keyVaultReferenceIdentity": "SystemAssigned",
+        "redundancyMode": "None",
+        "reserved": false,
+        "scmSiteAlsoStopped": false,
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ContosoAppServicePlanWestEurope_name'))]",
+        "siteConfig": {
+          "acrUseManagedIdentityCreds": false,
+          "alwaysOn": true,
+          "functionAppScaleLimit": 0,
+          "http20Enabled": false,
+          "minimumElasticInstanceCount": 0,
+          "numberOfWorkers": 1
+        },
+        "storageAccountRequired": false,
+        "vnetContentShareEnabled": false,
+        "vnetImagePullEnabled": false,
+        "vnetRouteAllEnabled": false
+      },
+      "type": "Microsoft.Web/sites"
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ContosoWebAppWestEuropeDE_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_ContosoWebAppWestEuropeDE_name'), '/ftp')]",
+      "properties": {
+        "allow": true
+      },
+      "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies"
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ContosoWebAppWestEuropeDE_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_ContosoWebAppWestEuropeDE_name'), '/scm')]",
+      "properties": {
+        "allow": true
+      },
+      "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies"
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ContosoWebAppWestEuropeDE_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_ContosoWebAppWestEuropeDE_name'), '/web')]",
+      "properties": {
+        "acrUseManagedIdentityCreds": false,
+        "alwaysOn": true,
+        "autoHealEnabled": false,
+        "azureStorageAccounts": {},
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "FtpsOnly",
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "http20Enabled": false,
+        "httpLoggingEnabled": false,
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647
+          }
+        ],
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "managedPipelineMode": "Integrated",
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 0,
+        "netFrameworkVersion": "v4.0",
+        "numberOfWorkers": 1,
+        "preWarmedInstanceCount": 0,
+        "publishingUsername": "$ContosoWebAppWestEuropeDE",
+        "remoteDebuggingEnabled": false,
+        "requestTracingEnabled": false,
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647
+          }
+        ],
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": true,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false
+      },
+      "type": "Microsoft.Web/sites/config"
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ContosoWebAppWestEuropeDE_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_ContosoWebAppWestEuropeDE_name'), '/contoso-tmprofilede.trafficmanager.net')]",
+      "properties": {
+        "hostNameType": "Verified",
+        "siteName": "ContosoWebAppWestEuropeDE"
+      },
+      "type": "Microsoft.Web/sites/hostNameBindings"
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ContosoWebAppWestEuropeDE_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_ContosoWebAppWestEuropeDE_name'), '/', parameters('sites_ContosoWebAppWestEuropeDE_name'), '.azurewebsites.net')]",
+      "properties": {
+        "hostNameType": "Verified",
+        "siteName": "ContosoWebAppWestEuropeDE"
+      },
+      "type": "Microsoft.Web/sites/hostNameBindings"
+    },
+    {
+      "apiVersion": "2015-08-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ContosoWebAppWestEuropeDE_name'))]"
+      ],
+      "name": "[concat(parameters('sites_ContosoWebAppWestEuropeDE_name'), '/2022-12-29T14_30_03_9825884')]",
+      "type": "Microsoft.Web/sites/snapshots"
+    }
+  ],
+  "variables": {}
+}
