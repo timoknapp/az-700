@@ -1,4 +1,4 @@
-param location string = 'eastus'
+param location string = resourceGroup().location
 param adminUser string = 'TestUser'
 @secure()
 param adminPassword string

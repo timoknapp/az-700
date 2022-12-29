@@ -6,11 +6,11 @@
 
 ```bash
 # Create a resouce group
-az group create -l eastus2 -n ExpressRouteResourceGroup
+az group create -l eastus -n IntLB-RG
 
 # Create all the resources with running a Bicep template
-az deployment group create -g ExpressRouteResourceGroup -n az-700-m3-ex2 --template-file main.bicep
+az deployment group create -g IntLB-RG -n az-700-m4-ex1 --template-file main.bicep --parameters @parameters.json 
 
 # Clean up everything afterwards
-az group delete -g ExpressRouteResourceGroup
+az group delete -g IntLB-RG
 ```
