@@ -27,6 +27,9 @@ Preparation for AZ-700 Certification
 
 ### [Module 5 - Load balance HTTP(S) traffic in Azure](https://learn.microsoft.com/en-us/training/modules/load-balancing-https-traffic-azure/)
 
+* [#1 - Application Gateway](./exercises/module-5/1-app-gateway/)
+* [#2 - Frontdoor](./exercises/module-5/2-frontdoor/)
+
 ### [Module 6 - Design and implement network security](https://learn.microsoft.com/en-us/training/modules/design-implement-network-security-monitoring/)
 
 ### [Module 7 - Design and implement private access to Azure Services](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/)
