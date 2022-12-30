@@ -9,7 +9,7 @@
 az group create -l eastus -n ContosoResourceGroup
 
 # Create all the resources with running a Bicep template
-az deployment group create -g ContosoResourceGroup -n az-700-m5-ex1 --template-file main.bicep --parameters @parameters.json
+az deployment group create --debug -g ContosoResourceGroup -n az-700-m5-ex1 --template-file main.bicep --parameters @parameters.json
 
 # Clean up everything afterwards
 az group delete -g ContosoResourceGroup
