@@ -13,7 +13,7 @@ Some Azure resources have been renamed according to the best practices of [Azure
 az group create -l eastus -n rg-contoso
 
 # Create all the VNETs with running a Bicep template
-az deployment group create -g rg-contoso -n az-700-m1-ex1 --template-file main.bicep
+az deployment group create --debug -g rg-contoso -n az-700-m1-ex1 --template-file main.bicep
 
 # Clean up everything afterwards
 az group delete -g rg-contoso

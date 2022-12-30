@@ -311,7 +311,6 @@ resource applicationGateways_ContosoAppGateway_name_resource 'Microsoft.Network/
 }
 
 resource networkInterfaces_backendvm1381_name_resource 'Microsoft.Network/networkInterfaces@2022-05-01' = {
-  kind: 'Regular'
   location: location
   name: networkInterfaces_backendvm1381_name
   properties: {
@@ -346,10 +345,12 @@ resource networkInterfaces_backendvm1381_name_resource 'Microsoft.Network/networ
     }
     nicType: 'Standard'
   }
+  dependsOn: [
+    applicationGateways_ContosoAppGateway_name_resource
+  ]
 }
 
 resource networkInterfaces_backendvm2380_name_resource 'Microsoft.Network/networkInterfaces@2022-05-01' = {
-  kind: 'Regular'
   location: location
   name: networkInterfaces_backendvm2380_name
   properties: {
@@ -384,6 +385,9 @@ resource networkInterfaces_backendvm2380_name_resource 'Microsoft.Network/networ
     }
     nicType: 'Standard'
   }
+  dependsOn: [
+    applicationGateways_ContosoAppGateway_name_resource
+  ]
 }
 
 resource virtualNetworks_ContosoVNet_name_resource 'Microsoft.Network/virtualNetworks@2022-05-01' = {

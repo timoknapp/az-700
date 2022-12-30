@@ -10,7 +10,7 @@ This exercise is built on top of [exercise 1](../1-vnets/). So you need deploy t
 
 ```bash
 # Create all the resources with running a Bicep template
-az deployment group create -g rg-contoso -n az-700-m1-ex2 --template-file main.bicep --parameters @parameters.json
+az deployment group create --debug -g rg-contoso -n az-700-m1-ex2 --template-file main.bicep --parameters @parameters.json
 
 # Clean up everything afterwards
 az group delete -g rg-contoso

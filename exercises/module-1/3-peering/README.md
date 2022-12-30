@@ -10,7 +10,7 @@ This exercise is built on top of [exercise 2](../2-dns/). So you need deploy the
 
 ```bash
 # Create all the resources with running a Bicep template
-az deployment group create -g rg-contoso -n az-700-m1-ex3 --template-file main.bicep --parameters @parameters.json
+az deployment group create --debug -g rg-contoso -n az-700-m1-ex3 --template-file main.bicep --parameters @parameters.json
 
 # Adapting Network Securits Groups (NSGs) to enable RDP for the demo VMs
 az network vnet subnet update -g rg-contoso -n snet-manufacturingsystem --vnet-name vnet-manufacturing --network-security-group nsg-manufacturing

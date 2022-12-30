@@ -9,7 +9,7 @@
 az group create -l eastus -n IntLB-RG
 
 # Create all the resources with running a Bicep template
-az deployment group create -g IntLB-RG -n az-700-m4-ex1 --template-file main.bicep --parameters @parameters.json 
+az deployment group create --debug -g IntLB-RG -n az-700-m4-ex1 --template-file main.bicep --parameters @parameters.json 
 
 # Clean up everything afterwards
 az group delete -g IntLB-RG

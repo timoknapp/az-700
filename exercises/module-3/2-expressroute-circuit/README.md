@@ -9,7 +9,7 @@
 az group create -l eastus2 -n ExpressRouteResourceGroup
 
 # Create all the resources with running a Bicep template
-az deployment group create -g ExpressRouteResourceGroup -n az-700-m3-ex2 --template-file main.bicep
+az deployment group create --debug -g ExpressRouteResourceGroup -n az-700-m3-ex2 --template-file main.bicep
 
 # Clean up everything afterwards
 az group delete -g ExpressRouteResourceGroup
