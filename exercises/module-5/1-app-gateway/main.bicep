@@ -35,7 +35,7 @@ resource publicIPAddresses_AGPublicIPAddress_name_resource 'Microsoft.Network/pu
   name: publicIPAddresses_AGPublicIPAddress_name
   properties: {
     idleTimeoutInMinutes: 4
-    ipAddress: '172.173.213.66'
+    // ipAddress: '172.173.213.6
     ipTags: []
     publicIPAddressVersion: 'IPv4'
     publicIPAllocationMethod: 'Static'
@@ -68,7 +68,6 @@ resource virtualMachines_BackendVM1_name_resource 'Microsoft.Compute/virtualMach
       adminPassword: adminPassword
       allowExtensionOperations: true
       computerName: virtualMachines_BackendVM1_name
-      requireGuestProvisionSignal: true
       secrets: []
       windowsConfiguration: {
         enableAutomaticUpdates: true
@@ -95,7 +94,6 @@ resource virtualMachines_BackendVM1_name_resource 'Microsoft.Compute/virtualMach
         deleteOption: 'Delete'
         diskSizeGB: 127
         managedDisk: {
-          id: resourceId('Microsoft.Compute/disks', '${virtualMachines_BackendVM1_name}_disk1_e9ebcf577a1f4efab6e3c93e55f71249')
           storageAccountType: 'Premium_LRS'
         }
         name: '${virtualMachines_BackendVM1_name}_disk1_e9ebcf577a1f4efab6e3c93e55f71249'
@@ -127,7 +125,6 @@ resource virtualMachines_BackendVM2_name_resource 'Microsoft.Compute/virtualMach
       adminPassword: adminPassword
       allowExtensionOperations: true
       computerName: virtualMachines_BackendVM2_name
-      requireGuestProvisionSignal: true
       secrets: []
       windowsConfiguration: {
         enableAutomaticUpdates: true
@@ -154,7 +151,6 @@ resource virtualMachines_BackendVM2_name_resource 'Microsoft.Compute/virtualMach
         deleteOption: 'Delete'
         diskSizeGB: 127
         managedDisk: {
-          id: resourceId('Microsoft.Compute/disks', '${virtualMachines_BackendVM2_name}_OsDisk_1_9c4bfea6a2564a3ab0a65b39571b4163')
           storageAccountType: 'Premium_LRS'
         }
         name: '${virtualMachines_BackendVM2_name}_OsDisk_1_9c4bfea6a2564a3ab0a65b39571b4163'
