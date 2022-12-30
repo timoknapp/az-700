@@ -35,7 +35,6 @@ resource publicIPAddresses_AGPublicIPAddress_name_resource 'Microsoft.Network/pu
   name: publicIPAddresses_AGPublicIPAddress_name
   properties: {
     idleTimeoutInMinutes: 4
-    // ipAddress: '172.173.213.6
     ipTags: []
     publicIPAddressVersion: 'IPv4'
     publicIPAllocationMethod: 'Static'
@@ -326,7 +325,6 @@ resource networkInterfaces_backendvm1381_name_resource 'Microsoft.Network/networ
             }
           ]
           primary: true
-          // privateIPAddress: '10.0.1.4'
           privateIPAddressVersion: 'IPv4'
           privateIPAllocationMethod: 'Dynamic'
           subnet: {
@@ -366,7 +364,6 @@ resource networkInterfaces_backendvm2380_name_resource 'Microsoft.Network/networ
             }
           ]
           primary: true
-          // privateIPAddress: '10.0.1.5'
           privateIPAddressVersion: 'IPv4'
           privateIPAllocationMethod: 'Dynamic'
           subnet: {
