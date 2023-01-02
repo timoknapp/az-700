@@ -32,6 +32,10 @@ Preparation for AZ-700 Certification
 
 ### [Module 6 - Design and implement network security](https://learn.microsoft.com/en-us/training/modules/design-implement-network-security-monitoring/)
 
+* [#1 - DDoS Protection Plan](./exercises/module-6/1-ddos-protection/)
+* [#2 - Azure Firewall](./exercises/module-6/2-azure-firewall/)
+* [#3 - Azure Firewall Manager](./exercises/module-6/3-azure-firewall-manager/)
+
 ### [Module 7 - Design and implement private access to Azure Services](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/)
 
 ### [Module 8 - Design and implement network monitoring](https://learn.microsoft.com/en-us/training/modules/design-implement-network-monitoring/)
