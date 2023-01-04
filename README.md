@@ -38,4 +38,7 @@ Preparation for AZ-700 Certification
 
 ### [Module 7 - Design and implement private access to Azure Services](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/)
 
+* [#1 - Service Endpoint](./exercises/module-7/1-service-endpoints/)
+* [#2 - Private Endpoint](./exercises/module-7/2-private-endpoints/)
+
 ### [Module 8 - Design and implement network monitoring](https://learn.microsoft.com/en-us/training/modules/design-implement-network-monitoring/)
