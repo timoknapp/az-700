@@ -6,11 +6,11 @@
 
 ```bash
 # Create a resouce group
-az group create -l centralus -n ContosoResourceGroup
+az group create -l westeurope -n Test-FW-RG
 
 # Create all the resources with running a Bicep template
-az deployment group create --debug -g ContosoResourceGroup -n az-700-m5-ex2 --template-file main.bicep
+az deployment group create --debug -g Test-FW-RG -n az-700-m6-ex2 --template-file main.bicep --parameters adminPassword='TestPassword123!'
 
 # Clean up everything afterwards
-az group delete -g ContosoResourceGroup
+az group delete -g Test-FW-RG
 ```
