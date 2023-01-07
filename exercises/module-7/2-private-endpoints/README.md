@@ -6,11 +6,11 @@
 
 ```bash
 # Create a resouce group
-az group create -l westeurope -n MyResourceGroup
+az group create -l eastus -n CreatePrivateEndpointQS-rg
 
 # Create all the resources with running a Bicep template
-az deployment group create --debug -g MyResourceGroup -n az-700-m7-ex2 --template-file main.bicep
+az deployment group create --debug -g CreatePrivateEndpointQS-rg -n az-700-m7-ex2 --template-file main.bicep --parameters adminPassword='TestPa$$w0rd!'
 
 # Clean up everything afterwards
-az group delete -g MyResourceGroup
+az group delete -g CreatePrivateEndpointQS-rg
 ```
