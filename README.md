@@ -1,4 +1,4 @@
-# az-700
+# AZ-700
 
 Preparation for AZ-700 Certification
 
@@ -42,3 +42,5 @@ Preparation for AZ-700 Certification
 * [#2 - Private Endpoint](./exercises/module-7/2-private-endpoints/)
 
 ### [Module 8 - Design and implement network monitoring](https://learn.microsoft.com/en-us/training/modules/design-implement-network-monitoring/)
+
+* [#1 - Azure Monitor](./exercises/module-8/1-azure-monitor/)
